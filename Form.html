@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" id="form">
+        <input type="text" name="name" id="name" placeholder="Enter Name">
+        <span id="nameErr"></span>
+        <br><br>
+        <input type="email" name="email" id="email" placeholder="Email">
+        <span id="emailErr"></span>
+        <br><br>
+        <input type="password" name="password" id="pass" placeholder="password">
+        <span id="passErr"></span>
+        <br><br>
+        <button type="submit">submit</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#form').submit(function() {
+                // event.preventDefault(); // prevent form submit to server
+                var name = $("#name").val()
+                var email = $("#email").val()
+                var pass = $('#pass').val()
+
+                let nameValidation = /^[a-zA-Z ]+$/;
+                let passValidation = /^.{6,}$/;
+                
+
+                if (name === "") {
+                    $('#nameErr').html('*Please enter valid name');
+                } 
+                if (email === '') {
+                    $('#emailErr').html('*Please enter valid name');
+                }
+                if (pass === '') {
+                    $('#passErr').html('*Please enter valid name');
+                }
+
+                if (name,email,pass !== "") {
+                    $('#nameErr').html('');
+                    $('#emailErr').html('');
+                    $('#passErr').html('');
+                }
+
+                if (nameValidation.test(name)) {
+                    $('#nameErr').html('');
+                } else {
+                    $('#nameErr').html('*Please enter valid name');
+                }
+
+                if (passValidation.test(pass)) {
+                    $('#emailErr').html('');
+                } else {
+                    $('#passErr').html('*Password should be of length atleast 6 charchter');
+                }
+                return false
+            })
+        })
+    </script>
+</body>
+</html>
