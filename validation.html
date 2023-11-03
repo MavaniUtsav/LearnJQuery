@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <form onsubmit="return handleValidation()">
+
+    <label>Please Enter a Name</label>
+    <input type="text" id="name"/>
+    <span id="errname"></span>
+    <br> <br>
+
+    <label>Please Enter a Age</label>
+    <input type="text" id="age"/>
+    <span id="errage"></span>
+    <br><br>
+
+    <label>Please Enter a password</label>
+    <input type="text" id="pass"/>
+    <span id="errpass"></span>
+    <br><br>
+
+    <label>Please Select Country</label>
+    <select id="country">
+        <option value="">---Select---</option>
+        <option value="Bharat">Bharat</option>
+        <option value="Australia">Australia</option>
+    </select>
+
+    <span id="errcountry"></span>
+    <br><br>
+
+    <label>Please Select Gender</label>
+    <input type="radio" value="male" name="gender"/>Male
+    <input type="radio" value="FeMale" name="gender"/>FeMale
+    <span id="errgender"></span>
+    <br><br>
+
+    <label>Please Select Any Sports:-</label>
+    <input type="checkbox" name="sports" value="Cricket">Cricket
+    <input type="checkbox" name="sports" value="Volleyball">Volleyball
+    <input type="checkbox" name="sports" value="Football">Football
+    <span id="errsports"></span>
+    <br><br>
+
+    <input type="submit">
+
+</form>
+
+
+    <script src="validation.js"></script>
+    
+</body>
+</html>
